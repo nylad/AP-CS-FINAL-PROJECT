@@ -1,10 +1,10 @@
-class MusicType :
-    def __init__(self, music_type: int, country: int, rap: int, pop: int, r&b: int):
+class MusicType:
+    def __init__(self, music_type: int, country: int, rap: int, pop: int, r_and_b: int):
         self.generes = {
             'country' : country, 
             'rap' : rap, 
             'pop' : pop, 
-            'r&b' : r&b 
+            'r&b' : r_and_b,
         }
     def add(self, genere: str) -> None: 
         if genere == 'country': 
