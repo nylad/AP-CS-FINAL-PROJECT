@@ -17,10 +17,12 @@ class MusicType:
             self.genere['r&b'] = self.genere.get('r&b') + 1 
 
     def sort(self) -> str: 
-        score = 0
+        score =0
         result = ''
+    
         for genere, points in self .genere.items(): 
             if points > score: 
+                sort = points
                 result = genere 
 
         return result 
