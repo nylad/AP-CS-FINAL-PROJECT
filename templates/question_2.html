@@ -1,7 +1,7 @@
-<form class="form-inline" method="POST" action="{{ url_for('first_question') }}">
+<form class="form-inline" method="POST" action="{{ url_for('second_question') }}"></form>
     <div class="form-group">
       <div class="input-group">
-          <span class="input-group-addon">What speed of music do you prefer?</span>
+          <span class="input-group-addon">What artist do you feel like you "connect" with the most?</span>
               <select name="selected" class="selectpicker form-control">
                 {% for answer in answers %}
                 <option value="{{answer}}">{{answer}}</option>

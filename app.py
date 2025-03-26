@@ -1,6 +1,7 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect
+from music_type import MusicType
 
-import music_type
+mt = MusicType(0, 0, 0, 0)
 
 app = Flask(__name__)
 
@@ -12,24 +13,29 @@ def hello_world():
 def first_question(): 
     answers = ['slow','soft' ,'medium', 'fast']
 
-    if request.method == 'GET': 
+    if request.method == 'GET':
         return render_template('question_1.html', answers = answers)
     
     if request.method == 'POST':
         seleted = request.form['selected']
         if seleted == answers[0]:
-            music_type.add('country')
+            mt.add('country')
         if seleted == answers[1]:
-            music_type.add('rap')
+            mt.add('rap')
         if seleted == answers[2]:
-            music_type.add('pop')
+            mt.add('pop')
         if seleted == answers[3]:
-            music_type.add('r&b')
+            mt.add('r&b')
 
-            return
+        return redirect('/question/2')
+
 @app.route('/question/2', methods = ['GET', 'POST'])
-def secound_question():
-    answers = ['']
+def second_question():
+    answers = ['Dolly Parton','A boogie', 'Olivia Rodrigo', 'Brent Faiyaz']
+
+    if request.method == 'GET': 
+        return render_template('question_2.html', answers= answers)
     
-    if __name__ == '__main__':
+    
+if __name__ == '__main__':
     app.run(host='127.0.0.1')

@@ -1,6 +1,6 @@
 class MusicType:
     def __init__(self, country: int, rap: int, pop: int, r_and_b: int):
-        self.generes = {
+        self.genere = {
             'country' : country, 
             'rap' : rap, 
             'pop' : pop, 
