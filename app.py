@@ -43,7 +43,7 @@ def second_question():
         if seleted == answers[3]:
             mt.add('r&b')
 
-        return redirect ('question/3')
+        return redirect ('/question/3')
     
 @app.route('/question/3', methods = ['GET', 'POST'])
 def third_question():
@@ -63,11 +63,11 @@ def third_question():
         if seleted == answers[3]:
             mt.add('r&b')
             
-        return redirect ('genre')
+        return redirect ('/genre')
     
 @app.route('/genre')
 def get_music_type():
-    return 'Get quiz' + mt.sort() + 'in personality quiz!'
+    return 'Get quiz ' + mt.sort() + ' in personality quiz!'
 
 if __name__ == '__main__':
      app.run(host='127.0.0.1')
